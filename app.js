@@ -20,7 +20,7 @@ if (answer1 === 'Y' || answer1 === 'YES') {
   alert('Sorry, that is incorrect. Better luck next time' + userName + '...');
   console.log('The first answer was wrong');
 } else {
-  alert('Something went wrong with your answer...');
+  alert('Something went wrong with your answer. Make sure you only answer yes or no.');
   console.log('Something went wrong with the first answer. They said' + answer1 + '.');
 };
 
@@ -33,12 +33,44 @@ if (answer2 === 'Y' || answer2 === 'YES') {
   alert('Whoops. I actually did go to the UW. Come on ' + userName + ', you\'re better than that!');
   console.log('The second answer was wrong.');
 } else {
-  alert('Something went wrong with your answer...');
+  alert('Something went wrong with your answer. Make sure you only answer yes or no.');
   console.log('Something went wrong with the second answer. They said ' + answer2 + '.')
 }
 
 var answer3 = prompt('Here comes the third question ' + userName + ', hope you\'re ready! Do I like cats more than dogs?').toUpperCase();
 
 if (answer3 === 'N' || answer3 === 'NO') {
+  alert('That\'s what I\'m talking about' + userName + '. Everyone knows dogs are the best.');
+  console.log('The third answer was correct.');
+} else if (answer3 === 'Y' || answer3 === 'YES') {
+  alert('Terrible answer. Cats are the worst. How could you not know that ' + userName + '?');
+} else {
+  alert('Something went wrong with your answer. Make sure you only answer yes or no.');
+  console.log('Something went wrong with the third answer. They said ' + answer3 + '.');
+};
 
-}
+var answer4 = prompt('Home stretch now. Question number four. Have I ever been to prison?').toUpperCase();
+
+if (answer4 === 'N' || answer4 === 'NO') {
+  alert('That is correct. Thank God. I wouldn\'t last a day in there if I\'m being perfectly honest with you ' + userName + '.');
+  console.log('The fourth answer was correct.');
+} else if (answer4 === 'Y' || answer4 === 'YES') {
+  alert('No I haven\'t been to prison! ' + userName + ', I thought we were friends and it turns out you think I\'m a criminal. I\'m genuinely hurt.');
+  console.log('The fourth answer was incorrect');
+} else {
+  alert('Something went wrong with your answer. Make sure you only answer yes or no.');
+  console.log('Something went wrong with the fourth answer. They said ' + answer4 + '.');
+};
+
+var answer5 = prompt('We finally made it. The last question. Alright ' + userName + ', for one million dollars. Am I going to be the best damn coder you have ever met?').toUpperCase();
+
+if (answer5 === 'Y' || answer5 === 'YES') {
+  alert('That is correct! Thanks ' + userName + ', I knew you believed in me.');
+  console.log('The fifth answer was correct.');
+} else if (answer5 === 'N' || answer5 === 'NO') {
+  alert(userName + ', I really can\'t believe you would say that.');
+  console.log('The fifth answer was incorrect.');
+} else {
+  alert('Something went wrong with your answer. If you haven\'t figured it out at this point ' + userName + ', I really can\'t help you.');
+  console.log('Something went wrong with the fifth answer. They said ' + answer5 + '.');
+};
