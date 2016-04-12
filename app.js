@@ -14,17 +14,17 @@ alert('Nice to meet you, ' + userName + '! I\'m going to ask you some questions 
 var answer1 = prompt('Ok ' + userName + ', first question. Am I the oldest child in my family?').toUpperCase();
 
 if (answer1 === 'Y' || answer1 === 'YES') {
-  alert('That is correct! Great guess' + userName + '!');
+  alert('That is correct! Great guess ' + userName + '!');
   console.log('The first answer was correct');
-} else if (answer2 === 'N' || answer2 === 'NO'){
-  alert('Sorry, that is incorrect. Better luck next time' + userName + '...');
+} else if (answer1 === 'N' || answer1 === 'NO'){
+  alert('Sorry, that is incorrect. Better luck next time ' + userName + '...');
   console.log('The first answer was wrong');
 } else {
   alert('Something went wrong with your answer. Make sure you only answer yes or no.');
-  console.log('Something went wrong with the first answer. They said' + answer1 + '.');
+  console.log('Something went wrong with the first answer. They said ' + answer1 + '.');
 };
 
-var answer2 = prompt('Next question. Did I attend the University of Washington').toUpperCase();
+var answer2 = prompt('Next question. Did I attend the University of Washington?').toUpperCase();
 
 if (answer2 === 'Y' || answer2 === 'YES') {
   alert('100% correct! Good job ' + userName + '.');
@@ -40,7 +40,7 @@ if (answer2 === 'Y' || answer2 === 'YES') {
 var answer3 = prompt('Here comes the third question ' + userName + ', hope you\'re ready! Do I like cats more than dogs?').toUpperCase();
 
 if (answer3 === 'N' || answer3 === 'NO') {
-  alert('That\'s what I\'m talking about' + userName + '. Everyone knows dogs are the best.');
+  alert('That\'s what I\'m talking about ' + userName + '. Everyone knows dogs are the best.');
   console.log('The third answer was correct.');
 } else if (answer3 === 'Y' || answer3 === 'YES') {
   alert('Terrible answer. Cats are the worst. How could you not know that ' + userName + '?');
