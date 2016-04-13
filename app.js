@@ -1,3 +1,6 @@
+var n = 0;
+var totalAnswer = 0;
+var correctAnswer = 1;
 alert('Hi! Let\'s play a guessing game about me!');
 
 var userName = prompt('First, tell me what your name is!');
@@ -9,6 +12,8 @@ var answer1 = prompt('Ok ' + userName + ', first question. Am I the oldest child
 if (answer1 === 'Y' || answer1 === 'YES') {
   alert('That is correct! Great guess ' + userName + '!');
   console.log('The first answer was correct');
+  var totalAnswer = totalAnswer += correctAnswer;
+  console.log('correct answers: ' + totalAnswer);
 } else if (answer1 === 'N' || answer1 === 'NO'){
   alert('Sorry, that is incorrect. Better luck next time ' + userName + '...');
   console.log('The first answer was wrong');
@@ -16,12 +21,13 @@ if (answer1 === 'Y' || answer1 === 'YES') {
   alert('Something went wrong with your answer. Make sure you only answer yes or no.');
   console.log('Something went wrong with the first answer. They said ' + answer1 + '.');
 };
-
 var answer2 = prompt('Next question. Did I attend the University of Washington?').toUpperCase();
 
 if (answer2 === 'Y' || answer2 === 'YES') {
   alert('100% correct! Good job ' + userName + '.');
-  console.log('The second answer was correct')
+  console.log('The second answer was correct');
+  var totalAnswer = totalAnswer += correctAnswer;
+  console.log('correct answers: ' + totalAnswer);
 } else if (answer2 === 'N' || answer2 === 'NO'){
   alert('Whoops. I actually did go to the UW. Come on ' + userName + ', you\'re better than that!');
   console.log('The second answer was wrong.');
@@ -35,6 +41,8 @@ var answer3 = prompt('Here comes the third question ' + userName + ', hope you\'
 if (answer3 === 'N' || answer3 === 'NO') {
   alert('That\'s what I\'m talking about ' + userName + '. Everyone knows dogs are the best.');
   console.log('The third answer was correct.');
+  var totalAnswer = totalAnswer += correctAnswer;
+  console.log('correct answers: ' + totalAnswer);
 } else if (answer3 === 'Y' || answer3 === 'YES') {
   alert('Terrible answer. Cats are the worst. How could you not know that ' + userName + '?');
 } else {
@@ -47,6 +55,8 @@ var answer4 = prompt('Halfway done. Question number four. Have I ever been to pr
 if (answer4 === 'N' || answer4 === 'NO') {
   alert('That is correct. Thank God. I wouldn\'t last a day in there if I\'m being perfectly honest with you ' + userName + '.');
   console.log('The fourth answer was correct.');
+  var totalAnswer = totalAnswer += correctAnswer;
+  console.log('correct answers: ' + totalAnswer);
 } else if (answer4 === 'Y' || answer4 === 'YES') {
   alert('No I haven\'t been to prison! ' + userName + ', I thought we were friends and it turns out you think I\'m a criminal. I\'m genuinely hurt.');
   console.log('The fourth answer was incorrect');
@@ -60,6 +70,8 @@ var answer5 = prompt('We\'ve made it to the final yes or no answer. Alright ' + 
 if (answer5 === 'Y' || answer5 === 'YES') {
   alert('That is correct! Thanks ' + userName + ', I knew you believed in me.');
   console.log('The fifth answer was correct.');
+  var totalAnswer = totalAnswer += correctAnswer;
+  console.log('correct answers: ' + totalAnswer);
 } else if (answer5 === 'N' || answer5 === 'NO') {
   alert(userName + ', I really can\'t believe you would say that.');
   console.log('The fifth answer was incorrect.');
@@ -69,7 +81,6 @@ if (answer5 === 'Y' || answer5 === 'YES') {
 };
 
 var answer6 = prompt('Ok ' + userName + ', do me a favor and answer this one in numbers. How old do you think I am?');
-var n = 0;
 while (answer6 != '24' && n < 4) {
   if (isNaN(answer6) == true){
     n++;
@@ -89,7 +100,16 @@ while (answer6 != '24' && n < 4) {
 if(answer6 === '24') {
   alert('Congratulations ' + userName + '. You nailed it.');
   console.log('The sixth answer was right on try number ' + n + '.');
+  var totalAnswer = totalAnswer += correctAnswer;
+  console.log('correct answers: ' + totalAnswer);
 } else {
   alert('You missed 4 times. I\'m pretty disappointed in you ' + userName +'.');
   console.log('The sixth answer was wrong all four times.');
+};
+if (totalAnswer == 6) {
+  alert('You got ' + totalAnswer + ' out of 6 ' + userName + '. You should definitely not know that much about me');
+} else if (3 < totalAnswer < 6) {
+  alert('You got ' + totalAnswer + ' out of 6 ' + userName + '. Way to go!');
+} else {
+  alert('You only got ' + totalAnswer + ' out of 6 ' + userName + '. I thought you cared more about me than that.')
 };
