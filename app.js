@@ -106,10 +106,27 @@ if(answer6 === '24') {
   alert('You missed 4 times. I\'m pretty disappointed in you ' + userName +'.');
   console.log('The sixth answer was wrong all four times.');
 };
-if (totalAnswer == 6) {
-  alert('You got ' + totalAnswer + ' out of 6 ' + userName + '. You should definitely not know that much about me');
-} else if (3 < totalAnswer < 6) {
-  alert('You got ' + totalAnswer + ' out of 6 ' + userName + '. Way to go!');
+
+var sports = ['BASKETBALL', 'BASEBALL', 'FOOTBALL'];
+var triesLeft = 6
+for(var i = 0; i < 6; i++) {
+  while(i < 6) {
+    var answer7 = prompt('Can you name any of the sports I played in high school? You have this many tries left: ' + triesLeft).toUpperCase();
+    var triesLeft = triesLeft -= 1;
+    for( var j = 0; j < sports.length; j++) {
+      if(answer7 === sports[i]) {
+        alert('Good work. I played basketball, baseball and football in high school.');
+        var totalAnswer = totalAnswer += correctAnswer;
+        console.log('The seventh answer is correct. Correct answers: ' + totalAnswer);
+        var i = 10;
+      }
+    }
+  }
+}
+if (totalAnswer == 7) {
+  alert('You got ' + totalAnswer + ' out of 7 ' + userName + '. You should definitely not know that much about me');
+} else if (4 < totalAnswer < 7) {
+  alert('You got ' + totalAnswer + ' out of 7 ' + userName + '. Way to go!');
 } else {
-  alert('You only got ' + totalAnswer + ' out of 6 ' + userName + '. I thought you cared more about me than that.')
+  alert('You only got ' + totalAnswer + ' out of 7 ' + userName + '. I thought you cared more about me than that.')
 };
