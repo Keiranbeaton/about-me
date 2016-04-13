@@ -74,11 +74,13 @@ while (answer6 != '24' && n < 4) {
   if(answer6 > '24') {
     n++;
     alert('I\'ve got some bad news. You missed. Try again, but this time guess lower.');
-    console.log('The sixth answer was wrong. They said ' + answer6 + ". This was guess" + n + '.')
+    console.log('The sixth answer was wrong. They said ' + answer6 + ". This was guess " + n + '.')
+    console.log(isNaN(answer6));
   } else {
     n++;
     alert('Tough luck, you missed. Try again, but this time guess higher.');
     console.log('The sixth answer was wrong. They said ' + answer6 + '. This was guess ' + n + '.');
+    console.log(isNaN(answer6));
   }
   var answer6 = prompt('I\'ll give you another try. How old do you think I am?')
 }
