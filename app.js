@@ -42,7 +42,7 @@ if (answer3 === 'N' || answer3 === 'NO') {
   console.log('Something went wrong with the third answer. They said ' + answer3 + '.');
 };
 
-var answer4 = prompt('Home stretch now. Question number four. Have I ever been to prison?').toUpperCase();
+var answer4 = prompt('Halfway done. Question number four. Have I ever been to prison?').toUpperCase();
 
 if (answer4 === 'N' || answer4 === 'NO') {
   alert('That is correct. Thank God. I wouldn\'t last a day in there if I\'m being perfectly honest with you ' + userName + '.');
@@ -55,7 +55,7 @@ if (answer4 === 'N' || answer4 === 'NO') {
   console.log('Something went wrong with the fourth answer. They said ' + answer4 + '.');
 };
 
-var answer5 = prompt('We finally made it. The last question. Alright ' + userName + ', for one million dollars. Am I going to be the best damn coder you have ever met?').toUpperCase();
+var answer5 = prompt('We\'ve made it to the final yes or no answer. Alright ' + userName + ', for one million dollars. Am I going to be the best damn coder you have ever met?').toUpperCase();
 
 if (answer5 === 'Y' || answer5 === 'YES') {
   alert('That is correct! Thanks ' + userName + ', I knew you believed in me.');
@@ -66,4 +66,28 @@ if (answer5 === 'Y' || answer5 === 'YES') {
 } else {
   alert('Something went wrong with your answer. If you haven\'t figured it out at this point ' + userName + ', I really can\'t help you.');
   console.log('Something went wrong with the fifth answer. They said ' + answer5 + '.');
+};
+
+var answer6 = prompt('Ok ' + userName + ', do me a favor and answer this one in numbers. How old do you think I am?');
+var n = 0;
+while (answer6 != '24' && n < 4) {
+  if(answer6 > '24') {
+    n++;
+    alert('I\'ve got some bad news. You missed. Try again, but this time guess lower.');
+    console.log('The sixth answer was wrong. They said ' + answer6 + ". This was guess " + n + '.')
+    console.log(isNaN(answer6));
+  } else {
+    n++;
+    alert('Tough luck, you missed. Try again, but this time guess higher.');
+    console.log('The sixth answer was wrong. They said ' + answer6 + '. This was guess ' + n + '.');
+    console.log(isNaN(answer6));
+  }
+  var answer6 = prompt('I\'ll give you another try. How old do you think I am?')
+}
+if(answer6 === '24') {
+  alert('Congratulations ' + userName + '. You nailed it.');
+  console.log('The sixth answer was right.');
+} else {
+  alert('You missed 4 times. I\'m pretty disappointed in you ' + userName +'.');
+  console.log('The sixth answer was wrong all four times.');
 };
