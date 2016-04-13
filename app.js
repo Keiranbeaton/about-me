@@ -71,22 +71,24 @@ if (answer5 === 'Y' || answer5 === 'YES') {
 var answer6 = prompt('Ok ' + userName + ', do me a favor and answer this one in numbers. How old do you think I am?');
 var n = 0;
 while (answer6 != '24' && n < 4) {
-  if(answer6 > '24') {
+  if (isNaN(answer6) == true){
+    n++;
+    alert('Whoops. Looks like you didn\'t answer with a number. Try again using a number.');
+    console.log('The answer given for question 6 was not a number. This was guess ' + n + '.');
+  }else if(answer6 > '24') {
     n++;
     alert('I\'ve got some bad news. You missed. Try again, but this time guess lower.');
     console.log('The sixth answer was wrong. They said ' + answer6 + ". This was guess " + n + '.')
-    console.log(isNaN(answer6));
   } else {
     n++;
     alert('Tough luck, you missed. Try again, but this time guess higher.');
     console.log('The sixth answer was wrong. They said ' + answer6 + '. This was guess ' + n + '.');
-    console.log(isNaN(answer6));
   }
   var answer6 = prompt('I\'ll give you another try. How old do you think I am?')
 }
 if(answer6 === '24') {
   alert('Congratulations ' + userName + '. You nailed it.');
-  console.log('The sixth answer was right.');
+  console.log('The sixth answer was right on try number ' + n + '.');
 } else {
   alert('You missed 4 times. I\'m pretty disappointed in you ' + userName +'.');
   console.log('The sixth answer was wrong all four times.');
