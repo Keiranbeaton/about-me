@@ -102,8 +102,8 @@ for(var i = 0; i < 4; i++) {
 var sports = ['BASKETBALL', 'BASEBALL', 'FOOTBALL'];
 var triesLeft = 6;
 var answer7 = prompt('Can you name any of the sports I played in high school? You have this many tries left: ' + triesLeft).toUpperCase();
-for(var i = 0; i < 6; i++) {
-  triesLeft--;
+for(var i = 0; i < 5; i++) {
+  triesLeft --;
     for(var j = 0; j < sports.length; j++) {
       if(answer7 === sports[j]) {
         alert('Good work. I played basketball, baseball and football in high school.');
@@ -115,7 +115,11 @@ for(var i = 0; i < 6; i++) {
   if (i != 10) {
     answer7 = prompt('Nope, try again. You have this many tries left: ' + triesLeft + '.').toUpperCase();
   }
+  if(triesLeft = 0) {
+    alert('Looks like you couldn\'t figure it out. You get an A+ for effort at least');
+  }
 }
+
 if (totalAnswer == 7) {
   alert('You got ' + totalAnswer + ' out of 7 ' + userName + '. You should definitely not know that much about me');
 } else if (4 < totalAnswer < 7) {
