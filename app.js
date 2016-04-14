@@ -5,125 +5,83 @@ var userName = prompt('First, tell me what your name is!');
 console.log('The user\'s name is ' + userName);
 alert('Nice to meet you, ' + userName + '! I\'m going to ask you some questions about me. Please answer Y/N. Let\'s get this game started!');
 
-var answer1 = prompt('Ok ' + userName + ', first question. Am I the oldest child in my family?').toUpperCase();
+var questions = ['Am I the oldest child in the family?', 'Did I attend the University of Washington?', 'Do I like cats more than dogs?', 'Have I ever been to prison?', 'Do I have two moms?', 'Answer this in numbers: How old do you think I am?', 'Can you name any of the sports I played in high school?'];
 
-if (answer1 === 'Y' || answer1 === 'YES') {
-  alert('That is correct! Great guess ' + userName + '!');
-  console.log('The first answer was correct');
-  totalAnswer++;
-  console.log('correct answers: ' + totalAnswer);
-} else if (answer1 === 'N' || answer1 === 'NO'){
-  alert('Sorry, that is incorrect. Better luck next time ' + userName + '...');
-  console.log('The first answer was wrong');
-} else {
-  alert('Something went wrong with your answer. Make sure you only answer yes or no.');
-  console.log('Something went wrong with the first answer. They said ' + answer1 + '.');
-};
-var answer2 = prompt('Next question. Did I attend the University of Washington?').toUpperCase();
+var answers = ['Y', 'Y', 'N', 'N', 'N', 24, ['BASKETBALL', 'BASEBALL', 'FOOTBALL']];
 
-if (answer2 === 'Y' || answer2 === 'YES') {
-  alert('100% correct! Good job ' + userName + '.');
-  console.log('The second answer was correct');
-  var totalAnswer = totalAnswer += correctAnswer;
-  console.log('correct answers: ' + totalAnswer);
-} else if (answer2 === 'N' || answer2 === 'NO'){
-  alert('Whoops. I actually did go to the UW. Come on ' + userName + ', you\'re better than that!');
-  console.log('The second answer was wrong.');
-} else {
-  alert('Something went wrong with your answer. Make sure you only answer yes or no.');
-  console.log('Something went wrong with the second answer. They said ' + answer2 + '.')
-};
+var rightAnswer = ['That is correct. Great guess!', '100% correct. Great job!', 'That\'s what I\'m talking about. Dogs are the best!', 'That is right, thank god. I wouldn\'t last a day in there if I\'m being honest with you.', 'Yep that\'s right I don\'t have two moms I lied to you.', 'Congratulations! You nailed it.', 'Good work. I played basketball, baseball, and football!'];
 
-var answer3 = prompt('Here comes the third question ' + userName + ', hope you\'re ready! Do I like cats more than dogs?').toUpperCase();
+var wrongAnswer = ['Sorry that is incorrect. Better luck next time.', 'Woops! I actually did go to UW. Come on you\'re better than that.', 'Terrible answer. Cats are the worst, how could you not know that?', 'No, I haven\'t been to prison. I thought we were friends and now you say this about me.', 'No. No I do not.', ['You missed, try again. But this time guess lower', 'You missed, try again. But this time guess higher.', 'Looks like you couldn\'t get it. Bummer.'], 'Looks like you couldn\'t figure it out. You get an A+ for effort at least.'];
 
-if (answer3 === 'N' || answer3 === 'NO') {
-  alert('That\'s what I\'m talking about ' + userName + '. Everyone knows dogs are the best.');
-  console.log('The third answer was correct.');
-  totalAnswer++;
-  console.log('correct answers: ' + totalAnswer);
-} else if (answer3 === 'Y' || answer3 === 'YES') {
-  alert('Terrible answer. Cats are the worst. How could you not know that ' + userName + '?');
-} else {
-  alert('Something went wrong with your answer. Make sure you only answer yes or no.');
-  console.log('Something went wrong with the third answer. They said ' + answer3 + '.');
-};
-
-var answer4 = prompt('Halfway done. Question number four. Have I ever been to prison?').toUpperCase();
-
-if (answer4 === 'N' || answer4 === 'NO') {
-  alert('That is correct. Thank God. I wouldn\'t last a day in there if I\'m being perfectly honest with you ' + userName + '.');
-  console.log('The fourth answer was correct.');
-  totalAnswer++;
-  console.log('correct answers: ' + totalAnswer);
-} else if (answer4 === 'Y' || answer4 === 'YES') {
-  alert('No I haven\'t been to prison! ' + userName + ', I thought we were friends and it turns out you think I\'m a criminal. I\'m genuinely hurt.');
-  console.log('The fourth answer was incorrect');
-} else {
-  alert('Something went wrong with your answer. Make sure you only answer yes or no.');
-  console.log('Something went wrong with the fourth answer. They said ' + answer4 + '.');
-};
-
-var answer5 = prompt('We\'ve made it to the final yes or no answer. Alright ' + userName + ', for one million dollars. Am I going to be the best damn coder you have ever met?').toUpperCase();
-
-if (answer5 === 'Y' || answer5 === 'YES') {
-  alert('That is correct! Thanks ' + userName + ', I knew you believed in me.');
-  console.log('The fifth answer was correct.');
-  totalAnswer++;
-  console.log('correct answers: ' + totalAnswer);
-} else if (answer5 === 'N' || answer5 === 'NO') {
-  alert(userName + ', I really can\'t believe you would say that.');
-  console.log('The fifth answer was incorrect.');
-} else {
-  alert('Something went wrong with your answer. If you haven\'t figured it out at this point ' + userName + ', I really can\'t help you.');
-  console.log('Something went wrong with the fifth answer. They said ' + answer5 + '.');
-};
-var answer6 = prompt('Ok ' + userName + ', do me a favor and answer this one in numbers. How old do you think I am?');
-for(var i = 0; i < 4; i++) {
-  while(answer6 != 24){
-    if(answer6 > 24) {
-      answer6 = prompt('I\'ve got some bad news. You missed. Try again, but this time guess lower.');
-      console.log('The sixth answer was wrong. They said ' + answer6 + ". This was guess " + i + '.')
-    } else if (answer6 < 24){
-      answer6 = prompt('Tough luck, you missed. Try again, but this time guess higher.');
-      console.log('The sixth answer was wrong. They said ' + answer6 + '. This was guess ' + i + '.');
-    } else {
-      answer6 = prompt('Whoops, looks like your answer wasn\'t a number, try again')
-      console.log('The sixth answer was neither higher nor lower than 24, but was not 24...')
-    }
-  }
-  if(answer6 == 24) {
-    alert('Congratulations ' + userName + '. You nailed it.');
-    console.log('The sixth answer was ' + answer6 + ' on try number ' + i + '.');
+askQuestion = function (q) {
+  var prompt1 = prompt(questions[q]).toUpperCase();
+  if (prompt1 === answers[q]) {
+    alert(rightAnswer[q]);
     totalAnswer++;
-    console.log('correct answers: ' + totalAnswer);
-    i = 5;
+  } else if (prompt1 !== 'Y' && prompt1 !== 'N') {
+    alert('You just lost a chance for a point.');
+  } else {
+    alert(wrongAnswer[q]);
   }
-}
-var sports = ['BASKETBALL', 'BASEBALL', 'FOOTBALL'];
-var triesLeft = 6;
-var answer7 = prompt('Can you name any of the sports I played in high school? You have this many tries left: ' + triesLeft).toUpperCase();
-for(var i = 0; i < 5; i++) {
-  triesLeft --;
-    for(var j = 0; j < sports.length; j++) {
-      if(answer7 === sports[j]) {
-        alert('Good work. I played basketball, baseball and football in high school.');
+};
+
+askAge = function (q) {
+  var incorrect = true;
+  while (incorrect === true) {
+    for (var i = 0; i < 4; i++) {
+      var answer = prompt(questions[q]);
+      if (answer == 24) {
+        alert(rightAnswer[q]);
         totalAnswer++;
-        console.log('The seventh answer is correct. Correct answers: ' + totalAnswer);
-        i = 10;
+        i = 5;
+        incorrect = false;
+      } else if (answer > 24) {
+        alert(wrongAnswer[q][0]);
+      } else if (answer < 24) {
+        alert(wrongAnswer[q][1]);
+      }
     }
+    if (incorrect == true) {
+      alert(wrongAnswer[q][2]);
+    }
+    incorrect = false;
   }
-  if (i != 10) {
-    answer7 = prompt('Nope, try again. You have this many tries left: ' + triesLeft + '.').toUpperCase();
+};
+
+askSports = function (q) {
+  var sports = ['BASKETBALL', 'BASEBALL', 'FOOTBALL'];
+  var wrong = true;
+  while (wrong === true) {
+    for(var i = 0; i < 6; i++) {
+      var answer = prompt(questions[q]).toUpperCase();
+      for (var j = 0; j < sports.length; j++) {
+        if (answer === answers[6][j]) {
+          alert(rightAnswer[q]);
+          totalAnswer++;
+          wrong = false;
+          i = 6;
+        }
+      }
+    }
+    if (wrong === true) {
+      alert(wrongAnswer[q]);
+    }
+    wrong = false;
   }
-  if(triesLeft = 0) {
-    alert('Looks like you couldn\'t figure it out. You get an A+ for effort at least');
-  }
-}
+};
+
+askQuestion(0);
+askQuestion(1);
+askQuestion(2);
+askQuestion(3);
+askQuestion(4);
+askAge(5);
+askSports(6);
 
 if (totalAnswer == 7) {
   alert('You got ' + totalAnswer + ' out of 7 ' + userName + '. You should definitely not know that much about me');
 } else if (4 < totalAnswer < 7) {
   alert('You got ' + totalAnswer + ' out of 7 ' + userName + '. Way to go!');
 } else {
-  alert('You only got ' + totalAnswer + ' out of 7 ' + userName + '. I thought you cared more about me than that.')
+  alert('You only got ' + totalAnswer + ' out of 7 ' + userName + '. I thought you cared more about me than that.');
 }
