@@ -5,13 +5,13 @@ var userName = prompt('First, tell me what your name is!');
 console.log('The user\'s name is ' + userName);
 alert('Nice to meet you, ' + userName + '! I\'m going to ask you some questions about me. Please answer Y/N. Let\'s get this game started!');
 
-var questions = ['Am I the oldest child in the family?', 'Did I attend the University of Washington?', 'Do I like cats more than dogs?', 'Have I ever been to prison?', 'Do I have two moms?', 'Answer this in numbers: How old do you think I am?', 'Can you name any of the sports I played in high school?'];
+var questions = ['Am I the oldest child in the family?', 'Did I attend the University of Washington?', 'Do I like cats more than dogs?', 'Have I ever been to prison?', 'Can I juggle?', 'Answer this in numbers: How old do you think I am?', 'Can you name any of the sports I played in high school?'];
 
 var answers = ['Y', 'Y', 'N', 'N', 'N', 24, ['BASKETBALL', 'BASEBALL', 'FOOTBALL']];
 
-var rightAnswer = ['That is correct. Great guess!', '100% correct. Great job!', 'That\'s what I\'m talking about. Dogs are the best!', 'That is right, thank god. I wouldn\'t last a day in there if I\'m being honest with you.', 'Yep that\'s right I don\'t have two moms I lied to you.', 'Congratulations! You nailed it.', 'Good work. I played basketball, baseball, and football!'];
+var rightAnswer = ['That is correct. Great guess!', '100% correct. Great job!', 'That\'s what I\'m talking about. Dogs are the best!', 'That is right, thank god. I wouldn\'t last a day in there if I\'m being honest with you.', 'I only have two hands, so you\'re right, I can\'t at all.', 'Congratulations! You nailed it.', 'Good work. I played basketball, baseball, and football!'];
 
-var wrongAnswer = ['Sorry that is incorrect. Better luck next time.', 'Woops! I actually did go to UW. Come on you\'re better than that.', 'Terrible answer. Cats are the worst, how could you not know that?', 'No, I haven\'t been to prison. I thought we were friends and now you say this about me.', 'No. No I do not.', ['You missed, try again. But this time guess lower', 'You missed, try again. But this time guess higher.', 'Looks like you couldn\'t get it. Bummer.'], 'Looks like you couldn\'t figure it out. You get an A+ for effort at least.'];
+var wrongAnswer = ['Sorry that is incorrect. Better luck next time.', 'Woops! I actually did go to UW. Come on you\'re better than that.', 'Terrible answer. Cats are the worst, how could you not know that?', 'No, I haven\'t been to prison. I thought we were friends and now you say this about me.', 'No. No I cannot.', ['You missed, try again. But this time guess lower', 'You missed, try again. But this time guess higher.', 'Looks like you couldn\'t get it. Bummer.'], 'Looks like you couldn\'t figure it out. You get an A+ for effort at least.'];
 
 askQuestion = function (q) {
   var prompt1 = prompt(questions[q]).toUpperCase();
@@ -70,11 +70,13 @@ askSports = function (q) {
   }
 };
 
-askQuestion(0);
-askQuestion(1);
-askQuestion(2);
-askQuestion(3);
-askQuestion(4);
+allQuestions = function() {
+  for(i = 0; i < 5; i++) {
+    askQuestion(i);
+  }
+};
+
+allQuestions();
 askAge(5);
 askSports(6);
 
