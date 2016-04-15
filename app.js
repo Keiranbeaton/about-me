@@ -1,9 +1,4 @@
 var totalAnswer = 0;
-alert('Hi! Let\'s play a guessing game about me!');
-
-var userName = prompt('First, tell me what your name is!');
-console.log('The user\'s name is ' + userName);
-alert('Nice to meet you, ' + userName + '! I\'m going to ask you some questions about me. Please answer Y/N. Let\'s get this game started!');
 
 var questions = ['Am I the oldest child in the family?', 'Did I attend the University of Washington?', 'Do I like cats more than dogs?', 'Have I ever been to prison?', 'Can I juggle?', 'Answer this in numbers: How old do you think I am?', 'Can you name any of the sports I played in high school?'];
 
@@ -13,50 +8,50 @@ var rightAnswer = ['That is correct. Great guess!', '100% correct. Great job!', 
 
 var wrongAnswer = ['Sorry that is incorrect. Better luck next time.', 'Woops! I actually did go to UW. Come on you\'re better than that.', 'Terrible answer. Cats are the worst, how could you not know that?', 'No, I haven\'t been to prison. I thought we were friends and now you say this about me.', 'No. No I cannot.', ['You missed, try again. But this time guess lower', 'You missed, try again. But this time guess higher.', 'Looks like you couldn\'t get it. Bummer.'], 'Looks like you couldn\'t figure it out. You get an A+ for effort at least.'];
 
-askQuestion = function (q) {
-  var prompt1 = prompt(questions[q]).toUpperCase();
-  if (prompt1 === answers[q]) {
-    alert(rightAnswer[q]);
+askQuestion = function (questionNumber) {
+  var prompt1 = prompt(questions[questionNumber]).toUpperCase();
+  if (prompt1 === answers[questionNumber]) {
+    alert(rightAnswer[questionNumber]);
     totalAnswer++;
   } else if (prompt1 !== 'Y' && prompt1 !== 'N') {
-    alert('You just lost a chance for a point.');
+    alert('You just lost a chance for a point. Answer questions with either Y/N');
   } else {
-    alert(wrongAnswer[q]);
+    alert(wrongAnswer[questionNumber]);
   }
 };
 
-askAge = function (q) {
+askAge = function (questionNumber) {
   var incorrect = true;
   while (incorrect === true) {
     for (var i = 0; i < 4; i++) {
-      var answer = prompt(questions[q]);
+      var answer = prompt(questions[questionNumber]);
       if (answer == 24) {
-        alert(rightAnswer[q]);
+        alert(rightAnswer[questionNumber]);
         totalAnswer++;
         i = 5;
         incorrect = false;
       } else if (answer > 24) {
-        alert(wrongAnswer[q][0]);
+        alert(wrongAnswer[questionNumber][0]);
       } else if (answer < 24) {
-        alert(wrongAnswer[q][1]);
+        alert(wrongAnswer[questionNumber][1]);
       }
     }
     if (incorrect == true) {
-      alert(wrongAnswer[q][2]);
+      alert(wrongAnswer[questionNumber][2]);
     }
     incorrect = false;
   }
 };
 
-askSports = function (q) {
+askSports = function (questionNumber) {
   var sports = ['BASKETBALL', 'BASEBALL', 'FOOTBALL'];
   var wrong = true;
   while (wrong === true) {
     for(var i = 0; i < 6; i++) {
-      var answer = prompt(questions[q]).toUpperCase();
+      var answer = prompt(questions[questionNumber]).toUpperCase();
       for (var j = 0; j < sports.length; j++) {
         if (answer === answers[6][j]) {
-          alert(rightAnswer[q]);
+          alert(rightAnswer[questionNumber]);
           totalAnswer++;
           wrong = false;
           i = 6;
@@ -64,7 +59,7 @@ askSports = function (q) {
       }
     }
     if (wrong === true) {
-      alert(wrongAnswer[q]);
+      alert(wrongAnswer[questionNumber]);
     }
     wrong = false;
   }
@@ -75,6 +70,11 @@ allQuestions = function() {
     askQuestion(i);
   }
 };
+
+alert('Hi! Let\'s play a guessing game about me!');
+var userName = prompt('First, tell me what your name is!');
+alert('Nice to meet you, ' + userName + '! I\'m going to ask you some questions about me. Please answer Y/N. Let\'s get this game started!');
+
 
 allQuestions();
 askAge(5);
