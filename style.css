@@ -1,3 +1,16 @@
 body {
-  background-color: rgba(61, 224, 235, 0.89);
+  background-color: green;
+  color: yellow;
+}
+
+h1 {
+  font-family: helvetica;
+}
+
+h3 {
+  font-family: Times;
+}
+
+li {
+  background-color: purple;
 }
